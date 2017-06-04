@@ -22,10 +22,10 @@ public class MyStringList {
 		return strArray[i];
 	}
 	
-	
 	public boolean find(String s){
 		for (int i = 0; i < size; i++) {
 			if (strArray[i].equals(s)) {
+				//find the index where the string was found
 				index = i;
 				return true;
 			}
@@ -37,6 +37,7 @@ public class MyStringList {
 		if (size >= strArray.length) {
 			resize();
 		}
+		//shift all the elements of array to the left from the inserted position then insert string to that position
 		System.arraycopy(strArray, pos, strArray, pos + 1, size - pos);
 		strArray[pos] = s;
 		size++;
@@ -44,6 +45,7 @@ public class MyStringList {
 	
 	public boolean remove(String s){
 		if (find(s)) {
+			//shift all the elements of array to the right from the removed position
 			System.arraycopy(strArray, index + 1, strArray, index, strArray.length - index - 1);
 			strArray[size - 1] = null;
 			size--;
@@ -56,6 +58,7 @@ public class MyStringList {
 		if (size + 1 > strArray.length) {
 			System.out.println("Resizing...");
 			String[] arr = new String[size * 2];
+			//copy all the elements of strArray to arr
 			System.arraycopy(strArray, 0, arr, 0, strArray.length);
 			strArray = arr;
 		} 		
