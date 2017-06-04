@@ -1,6 +1,8 @@
 package swing;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
@@ -32,12 +34,12 @@ public class MyPicture extends JFrame {
 
 				@Override
 				public void mouseReleased(MouseEvent e) {
-					label1.setText("Bye Samita!");
+					// label1.setText("Bye Samita!");
 				}
 
 				@Override
 				public void mousePressed(MouseEvent e) {
-					label1.setText("Hello Samita!");
+					// label1.setText("Hello Samita!");
 				}
 
 				@Override
@@ -52,7 +54,7 @@ public class MyPicture extends JFrame {
 
 				@Override
 				public void mouseClicked(MouseEvent e) {
-					// TODO Auto-generated method stub
+					label1.setText("Hello Samita!");
 				}
 			});
 
@@ -60,9 +62,13 @@ public class MyPicture extends JFrame {
 			this.add(label1, BorderLayout.NORTH);
 			this.add(label2, BorderLayout.CENTER);
 
+			Color color = new Color(0, 150, 0); // red = 0, green = 150, blue = 0 
+			Container container = this.getContentPane();
+			container.setBackground(color);
+			
 			this.setSize(300, 300);
-			this.setVisible(true);
 			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			this.setVisible(true);			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
