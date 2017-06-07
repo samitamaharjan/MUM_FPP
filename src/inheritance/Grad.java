@@ -5,7 +5,6 @@ public class Grad extends Student{
 	
 	public Grad(String firstName, String lastName, double gradSalary) {
 		super(firstName, lastName);
-		this.gradSalary = gradSalary;
 	}
 
 	public double getPay() {

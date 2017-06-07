@@ -18,7 +18,7 @@ public class Undergrad extends Student{
 		return underHours;
 	}
 	
-	public int getPay() {
+	public double getPay() {
 		return getUnderWage() * getUnderHours();
 	}
 	
