@@ -1,5 +1,7 @@
 package closedcurve;
 
-public class ClosedCurve {
-
+public abstract class ClosedCurve {
+	
+	public abstract double computeArea();
+	public abstract String getCurveType();
 }
