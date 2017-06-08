@@ -56,7 +56,7 @@ public class AccountList {
 	
 	private void resize(){
 		if (size + 1 > accountArray.length) {
-			System.out.println("Resizing...");
+			//System.out.println("Resizing...");
 			Account[] arr = new Account[size * 2];
 			//copy all the elements of strArray to arr
 			System.arraycopy(accountArray, 0, arr, 0, accountArray.length);

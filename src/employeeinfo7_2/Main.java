@@ -18,9 +18,11 @@ public class Main {
 		emps[0].createNewChecking(10500);
 		emps[0].createNewSavings(1000);
 		emps[0].createNewRetirement(9300);
+		emps[0].createNewChecking(11500);
 		
 		emps[1].createNewChecking(34000);
 		emps[1].createNewSavings(27000);
+		emps[1].createNewSavings(25000);
 		
 		emps[2].createNewChecking(10038);
 		emps[2].createNewSavings(12600);
@@ -37,6 +39,7 @@ public class Main {
 	}
 	
 	StringBuilder sb = new StringBuilder();
+	
 	String getFormattedAccountInfo() {
 		for (Employee emp : emps) {
 			sb.append(emp.getFormattedAcctInfo());

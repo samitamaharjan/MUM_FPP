@@ -5,7 +5,6 @@ abstract class Account {
 	private final static double DEFAULT_BALANCE = 0.0;
 	
 	private double balance;
-	private AccountType acctType;
 	private Employee employee;
 
 	public Account(Employee emp, double balance) {
@@ -21,16 +20,12 @@ abstract class Account {
 		return balance;
 	}
 	
-	public AccountType getAccType() {
-		return acctType;
-	}
-	
 	public Employee getEmployee() {
 		return employee;
 	}
 	
 	public String toString() {
-		return String.format("Account type: %s%nCurrent bal:  %.1f%n", acctType.toString(), balance);
+		return String.format("Account type: %s%nCurrent bal:  %.1f%n", getAccountType().toString(), balance);
 	}
 
 	public void makeDeposit(double deposit) {
