@@ -1,6 +1,6 @@
 package employeeinfo7_2;
 
-class Account {
+abstract class Account {
 	
 	private final static double DEFAULT_BALANCE = 0.0;
 	
@@ -8,14 +8,13 @@ class Account {
 	private AccountType acctType;
 	private Employee employee;
 
-	Account(Employee emp, AccountType acctType, double balance) {
+	public Account(Employee emp, double balance) {
 		this.employee = emp;
-		this.acctType = acctType;
 		this.balance = balance;
 	}
 
-	Account(Employee emp, AccountType acctType) {
-		this(emp, acctType, DEFAULT_BALANCE);
+	public Account(Employee emp) {
+		this(emp, DEFAULT_BALANCE);
 	}
 	
 	public double getBalance() {
@@ -43,4 +42,10 @@ class Account {
 		balance = balance - amount;
 		return true;
 	}
+	
+	public void deduct(double amount) {
+		makeWithdrawal(amount);
+	}
+	
+	public abstract AccountType getAccountType();
 }

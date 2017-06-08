@@ -4,11 +4,9 @@ import java.time.LocalDate;
 
 public class Employee {
 
-	private Account savingsAcct;
-	private Account checkingAcct;
-	private Account retirementAcct;
 	private String name;
 	private LocalDate hireDate;
+	private AccountList accountList = new AccountList();
 	
 	public Employee(String name, int yearOfHire, int monthOfHire, int dayOfHire){
 		this.name = name;
@@ -16,34 +14,29 @@ public class Employee {
 	}
 	
 	public void createNewChecking(double startAmount) {
-		checkingAcct = new Account(this, AccountType.CHECKING, startAmount);	
+		Account checkingAcct = new CheckingAccount(this, startAmount);	
+		accountList.add(checkingAcct);
 	}
 
 	public void createNewSavings(double startAmount) {
-		savingsAcct = new Account(this, AccountType.SAVINGS, startAmount);
+		Account savingsAcct = new SavingAccount(this, startAmount);
+		accountList.add(savingsAcct);
 	}
 
 	public void createNewRetirement(double startAmount) {
-		retirementAcct = new Account(this, AccountType.RETIREMENT, startAmount);
+		Account retirementAcct = new RetirementAccount(this, startAmount);
+		accountList.add(retirementAcct);
 	}
 
 	public String getFormattedAcctInfo() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(String.format("ACCOUNT INFO FOR %s:%n%n", this.name));
 		
-		if (checkingAcct != null) {
-			sb.append(checkingAcct.toString());
+		for (int i = 0; i < accountList.size(); i++) {
+			Account acc = accountList.get(i); // retrieve account object from index i
+			sb.append(acc.toString()); 
+			sb.append("\n");
 		}
-		
-		if(savingsAcct != null) {
-			sb.append(savingsAcct.toString());
-		}
-		
-		if(retirementAcct != null) {
-			sb.append(retirementAcct.toString());	
-		}
-		sb.append("\n");
-		
 		return sb.toString();
 	}
 	
@@ -55,27 +48,13 @@ public class Employee {
 		return hireDate;
 	}
 	
-	public void deposit(AccountType acctType, double amt){
-		if (checkingAcct != null && acctType == AccountType.CHECKING) {
-			checkingAcct.makeDeposit(amt);
-		} else if (savingsAcct != null && acctType == AccountType.SAVINGS) {
-			savingsAcct.makeDeposit(amt);
-		} else if (retirementAcct != null && acctType == AccountType.RETIREMENT) {
-			retirementAcct.makeDeposit(amt);
-		}
+	public void deposit(int accountIndex, double amt){
+		Account account = accountList.get(accountIndex);
+		account.makeDeposit(amt);		
 	}
 	
-	public boolean withdraw(AccountType acctType, double amt){
-		if (checkingAcct != null && acctType == AccountType.CHECKING) {
-			checkingAcct.makeWithdrawal(amt);
-			return true;
-		} else if (savingsAcct != null && acctType == AccountType.SAVINGS) {
-			savingsAcct.makeWithdrawal(amt);
-			return true;			
-		} else if (retirementAcct != null && acctType == AccountType.RETIREMENT) {
-			retirementAcct.makeWithdrawal(amt);
-			return true;
-		}
-		return false;
+	public boolean withdraw(int accountIndex, double amt){
+		Account account = accountList.get(accountIndex);
+		return account.makeWithdrawal(amt);
 	}
 }
