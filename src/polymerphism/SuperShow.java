@@ -3,7 +3,7 @@ package polymerphism;
 class SuperShow {
 	public static void main(String[] args) {
 		ExtendShow ext = new ExtendShow();
-		SuperShow sup = ext;
+		SuperShow sup = new ExtendShow();
 		sup.show();
 		ext.show();
 		
