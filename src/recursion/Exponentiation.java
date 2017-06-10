@@ -13,7 +13,5 @@ public class Exponentiation {
 		if (n == 1) return x;
 		if (n % 2 == 0) return getExponential(x, n / 2) * getExponential(x, n / 2);
 		else  return x * getExponential(x, n / 2) * getExponential(x, n / 2);
-		
-		
 	}
 }

@@ -45,5 +45,7 @@ public class Rectangle extends ClosedCurve implements Polygon {
 		
 		return arr;
 	}
+	
+	
 
 }

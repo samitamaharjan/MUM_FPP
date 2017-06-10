@@ -22,7 +22,7 @@ public class AccountList {
 		return accountArray[i];
 	}
 	
-	public boolean find(String s){
+	public boolean find(Account s){
 		for (int i = 0; i < size; i++) {
 			if (accountArray[i].equals(s)) {
 				//find the index where the account  was found
@@ -43,7 +43,7 @@ public class AccountList {
 		size++;
 	}
 	
-	public boolean remove(String s){
+	public boolean remove(Account s){
 		if (find(s)) {
 			//shift all the elements of array to the right from the removed position
 			System.arraycopy(accountArray, index + 1, accountArray, index, accountArray.length - index - 1);

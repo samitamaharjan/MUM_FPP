@@ -9,7 +9,7 @@ public interface Polygon {
 	static double sum(double[] arr) {
 		return 0;
 	}
-	
+		
 	default double computePerimeter() {
 		double perimeter = 0;
 		double[] arr = getArrayOfSides();

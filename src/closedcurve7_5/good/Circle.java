@@ -18,7 +18,6 @@ public final class Circle extends ClosedCurve {
 		return "Circle";
 	}
 
-	@Override
 	public int getNumberOfSides() {
 		// TODO Auto-generated method stub
 		return 0;

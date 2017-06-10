@@ -19,7 +19,7 @@ class MinSort {
 				index = i;
 			}
 		}
-        return sort(s.substring(0, index) + s.substring(index + 1 )) + min;
+        return min + sort(s.substring(0, index) + s.substring(index + 1 ));
     }
 }
 

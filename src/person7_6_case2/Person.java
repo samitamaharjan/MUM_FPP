@@ -21,7 +21,7 @@ public class Person {
 	@Override
 	public boolean equals(Object ob) {
 		if(ob == null) return false;
-		if(!(ob instanceof Person)) return false;
+		if(ob.getClass() != this.getClass()) return false;
 		Person p = (Person)ob;
 		return p.name.equals(name) && p.dateOfBirth.equals(dateOfBirth);
 	}
