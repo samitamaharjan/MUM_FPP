@@ -18,8 +18,7 @@ public class PersonWithJob {
 		if(!(ob instanceof PersonWithJob)) return false;
 		PersonWithJob p = (PersonWithJob)ob;
 		
-		return person.getName().equals(p.person.getName())
-				&& person.getDateOfBirth().equals(p.person.getDateOfBirth())
+		return p.person.equals(this.person)
 				&& p.salary == salary;
 	}
 }

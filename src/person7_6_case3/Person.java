@@ -37,7 +37,7 @@ public class Person {
 		GregorianCalendar dateOfBirth = new GregorianCalendar(2014, 6, 6);
 		PersonWithJob p3 = new PersonWithJob(new Person("Samita", dateOfBirth), 1500);
 		
-		GregorianCalendar dateOfBirth1 = new GregorianCalendar(2014, 5, 6);
+		GregorianCalendar dateOfBirth1 = new GregorianCalendar(2014, 6, 6);
 		PersonWithJob p4 = new PersonWithJob(new Person("Samita", dateOfBirth1), 1500);
 		
 		System.out.println(p3.equals(p4));
