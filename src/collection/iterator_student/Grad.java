@@ -1,4 +1,4 @@
-package ListStudent;
+package collection.iterator_student;
 
 public class Grad extends Student{
 	private double gradSalary;
@@ -7,7 +7,8 @@ public class Grad extends Student{
 		super(firstName, lastName);
 		this.gradSalary = gradSalary;
 	}
-
+	
+	@Override
 	public double getPay() {
 		return gradSalary;
 	}

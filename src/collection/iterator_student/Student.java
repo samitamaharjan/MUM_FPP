@@ -1,6 +1,6 @@
-package ListStudent;
+package collection.iterator_student;
 
-public class Student {
+public abstract class Student {
 	private String firstName;
 	private String lastName;
 		
@@ -20,4 +20,6 @@ public class Student {
 	public void printData(){
 		System.out.printf("Student name: %s %s%n", getFirstName(), getLastName());
 	}
+	
+	public abstract double getPay();
 }

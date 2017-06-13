@@ -1,4 +1,4 @@
-package ListStudent;
+package collection.list_student;
 
 import java.util.ArrayList;
 

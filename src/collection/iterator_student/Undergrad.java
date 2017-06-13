@@ -1,4 +1,4 @@
-package ListStudent;
+package collection.iterator_student;
 
 public class Undergrad extends Student{
 	private int underWage;
@@ -18,6 +18,7 @@ public class Undergrad extends Student{
 		return underHours;
 	}
 	
+	@Override
 	public double getPay() {
 		return getUnderWage() * getUnderHours();
 	}
