@@ -1,6 +1,6 @@
 package collection.comparable_student;
 
-public abstract class Student {
+public abstract class Student implements Comparable<Student> {
 	private String firstName;
 	private String lastName;
 		
@@ -22,4 +22,14 @@ public abstract class Student {
 	}
 	
 	public abstract double getPay();
+	
+	@Override
+	public int compareTo(Student stu) {
+		return this.getFirstName().compareTo(stu.getFirstName());
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("%s %s : %.2f", getFirstName(), getLastName(), getPay()); 
+	}
 }
