@@ -1,19 +1,24 @@
 package ExamEqual;
 
 public class Professor {
-	private String profName;
-	private String subject;
-	
-	public Professor(String profName, String subject) {
-		this.profName = profName;
-		this.subject = subject;
-	}
-	
-	public String getProfName() {
-		return profName;
-	}
-	public String getSubject() {
-		return subject;
-	}
-	
+	String name;
+
+    public Professor(String name) {
+        this.name = name;
+    }
+    
+    @Override
+    public boolean equals(Object ob) {
+        if (ob == null || !(ob instanceof Professor)) {
+            return false;
+        }
+        
+        Professor thisProfessor = this;
+        Professor otherProfessor = (Professor) ob;
+        
+        if (thisProfessor.name.equals(otherProfessor.name)) {
+            return true;
+        }
+        return false;
+    }
 }
