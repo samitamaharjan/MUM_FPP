@@ -7,12 +7,12 @@ public class MyStringStackSingly {
 	
 	public static void main(String[] args) {
 		MyStringStackSingly stack = new MyStringStackSingly();
-		stack.push("Bob");
-		stack.push("Harry");
-		stack.push("Alice");
-		stack.push("John");
+		stack.push("a");
+		stack.push("b");
+		stack.push("c");
+		stack.push("d");
 		
-		System.out.print(stack);
+		System.out.println(stack);
 		System.out.println("Popping… " + stack.pop());
 		System.out.println("Peeking… " + stack.peek());
 		System.out.println("Popping… " + stack.pop());
@@ -21,34 +21,27 @@ public class MyStringStackSingly {
 	
 	public void push(String s) {
 		Node1 node = new Node1(s);
-		if (tail == null) {
+		if (head == null) {
+			head = node;
 			tail = node;
 		} else {
-			tail.next = node;
-			tail = node;
+			node.next = head;
+			head = node;
 		}
 	}
 	
 	public String pop() {
-		if (tail == null) return "Empty";
-		else {
-			Node1 n = head;
-			String s = tail.value;
-			while (n != null) {
-				if (n.next.next == null) {
-					tail = n;
-					n.next = null;
-				}
-				n = n.next;
-			}
-			return s;
-		}
+		Node1 node = head;
+		String s = node.value;
+		head = node.next;
+		node.next = null;
+		return s;
 	}
 	
 	public String peek() {
-		if (tail == null) return "Empty";
+		if (head == null) return "Empty";
 		else {
-			return tail.value;
+			return head.value;
 		}
 	}
 	
