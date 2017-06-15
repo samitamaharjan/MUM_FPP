@@ -1,6 +1,6 @@
 package collection.linkedlist;
 
-class MyCode {
+class DoublyLinkedListExample {
     public static void main (String[] args) {
         MyLinkedList list = new MyLinkedList();
         
