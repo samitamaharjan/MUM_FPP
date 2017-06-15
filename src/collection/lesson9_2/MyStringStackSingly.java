@@ -1,5 +1,4 @@
-package collection.lesson9_1_stack;
-
+package collection.lesson9_2;
 
 public class MyStringStackSingly {
 	Node1 head;
@@ -42,6 +41,11 @@ public class MyStringStackSingly {
 		else {
 			return head.value;
 		}
+	}
+	
+	public boolean isEmpty() {
+		if (head == null) return true;
+		return false;
 	}
 	
 	 @Override

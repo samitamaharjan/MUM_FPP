@@ -97,7 +97,6 @@ public class MyStringList {
 		String temp = strArray[i];
 		strArray[i] = strArray[j];
 		strArray[j] = temp;
-		
 	}
 	
 	//find minimum of arr between the indices bottom and top
@@ -164,7 +163,5 @@ public class MyStringList {
 		
 		System.out.println(list.search("number"));
 		System.out.println(list.search("tiny"));
-		
 	}
-
 }
