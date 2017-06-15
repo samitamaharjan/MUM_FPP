@@ -1,4 +1,4 @@
-package collection.lesson9_1;
+package collection.lesson9_1_stack;
 
 public class MyStringStack {
 	Node head;

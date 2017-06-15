@@ -1,36 +1,35 @@
-package collection.lesson9_1;
+package collection.lesson9_1_queue;
 
 
-public class MyStringStackSingly {
+public class MyStringQueueSingly {
 	Node1 head;
 	Node1 tail;
 	
 	public static void main(String[] args) {
-		MyStringStackSingly stack = new MyStringStackSingly();
-		stack.push("a");
-		stack.push("b");
-		stack.push("c");
-		stack.push("d");
+		MyStringQueueSingly queue = new MyStringQueueSingly();
+		queue.enqueue("a");
+		queue.enqueue("b");
+		queue.enqueue("c");
+		queue.enqueue("d");
 		
-		System.out.println(stack);
-		System.out.println("Popping… " + stack.pop());
-		System.out.println("Peeking… " + stack.peek());
-		System.out.println("Popping… " + stack.pop());
-			
+		System.out.println(queue);
+		System.out.println("Dequeue… " + queue.dequeue());
+		System.out.println("Peek… " + queue.peek());
+		System.out.println("Dequeue… " + queue.dequeue());
 	}
 	
-	public void push(String s) {
+	public void enqueue(String s) {
 		Node1 node = new Node1(s);
 		if (head == null) {
 			head = node;
 			tail = node;
 		} else {
-			node.next = head;
-			head = node;
+			tail.next = node;
+			tail = node;
 		}
 	}
 	
-	public String pop() {
+	public String dequeue() {
 		Node1 node = head;
 		String s = node.value;
 		head = node.next;
@@ -39,10 +38,7 @@ public class MyStringStackSingly {
 	}
 	
 	public String peek() {
-		if (head == null) return "Empty";
-		else {
-			return head.value;
-		}
+		return head.value;
 	}
 	
 	 @Override
@@ -59,7 +55,6 @@ public class MyStringStackSingly {
         }
         return sb.toString();
     }
-	    
 }
 
 class Node1 {
