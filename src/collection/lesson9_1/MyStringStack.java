@@ -1,6 +1,7 @@
 package collection.lesson9_1;
 
 public class MyStringStack {
+	Node head;
 	Node tail;
 	
 	public static void main(String[] args) {
@@ -12,12 +13,14 @@ public class MyStringStack {
 		System.out.println("Popping… " + stack.pop());
 		System.out.println("Peeking… " + stack.peek());
 		System.out.println("Popping… " + stack.pop());
-			
+		stack.push("John");
+		System.out.println("Pushing… " + stack.pop());
 	}
 	
 	public void push(String s) {
 		Node node = new Node(null, null, s);
 		if (tail == null) {
+			head = node;
 			tail = node;
 		} else {
 			tail.next = node;

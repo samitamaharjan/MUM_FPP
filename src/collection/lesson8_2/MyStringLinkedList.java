@@ -20,8 +20,6 @@ public class MyStringLinkedList {
 		System.out.println("removing tail");
 		System.out.println(list);
 		
-		Node node = list.minNode(null);
-		System.out.println(node.value);
 		list.sort();
 		System.out.println("after sorting");
 		System.out.println(list);
@@ -105,34 +103,42 @@ public class MyStringLinkedList {
 		}
 		return false;
 	}
-	
-	public void sort() {
-		Node n = header;
-		if(n == null || size <=1) return;
-		while (n != null){
-			Node nextMinPos = minNode(n);
-			swap(n, nextMinPos); 
-			n = n.next;
-		}
-	}
-	
-	void swap(Node i, Node j){
-		Node newNode = i;
-		i.next = j;
-		j.previous = i;
-		j.next = newNode;
-	}
-	
-	public Node minNode(Node n) {
-		Node min = header;
+	public Node get(int index) {
 		Node node = header;
-		while(node != null) {
-			if (node.value.compareTo(min.value) < 1) {
-					min = node;
-			}
+		int i = 0;
+		while (i < index) {
 			node = node.next;
+			i++;
 		}
-		return min;
+		return node;
+	}
+	
+	public void sort(){
+		if(this == null || this.size() <=1) return;
+		int len = this.size();
+		for(int i = 0; i < len; ++i){
+			int nextMinPos = minpos(i,len-1);
+			swap(i,nextMinPos); 
+		}
+	}
+	
+	void swap(int i, int j){
+		String temp = this.get(i).value;
+		this.get(i).value = this.get(j).value;
+		this.get(j).value = temp;
+	}
+	//find minimum of arr between the indices bottom and top
+	public int minpos(int bottom, int top){		
+		String m = this.get(bottom).value;
+		int index = bottom;
+		for(int i = bottom + 1; i <= top; ++i){
+			if(this.get(i).value.compareTo(m) < 1) { 
+				m = this.get(i).value;
+				index = i;
+			}
+		}
+		//return location of min, not the min itself
+		return index;
 	}
 	
 	public boolean search(String s) {
