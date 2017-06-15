@@ -13,37 +13,36 @@ public class MyStringStack {
 		System.out.println("Popping… " + stack.pop());
 		System.out.println("Peeking… " + stack.peek());
 		System.out.println("Popping… " + stack.pop());
+		
 		stack.push("John");
-		System.out.println("Pushing… " + stack.pop());
+		System.out.println("Popping… " + stack.pop());
 	}
 	
 	public void push(String s) {
 		Node node = new Node(null, null, s);
-		if (tail == null) {
+		if (head == null) {
 			head = node;
 			tail = node;
 		} else {
-			tail.next = node;
-			node.previous = tail;
-			tail = node;
+			node.next = head;
+			head.previous = node;
+			head = node;
 		}
 	}
 	
 	public String pop() {
-		if (tail == null) return "Empty";
-		else {
-			String s = tail.value;
-			tail = tail.previous;
-			tail.next = null;
-			return s;
-		}
+		if (head == null) return "Empty";
+		
+		Node node = head;
+		node.next.previous = null;
+		head = node.next;
+		node.next = null;
+		return node.value;
 	}
 	
 	public String peek() {
-		if (tail == null) return "Empty";
-		else {
-			return tail.value;
-		}
+		if (head == null) return "Empty";
+		return head.value;
 	}
 }
 
