@@ -7,6 +7,7 @@ import java.io.IOException;
 public class SymbolBalancer {
 	String filename;
 	String text;
+	String expression = "[](){}";
 	
 	public SymbolBalancer(String filename) {
 		this.filename = filename;
@@ -40,6 +41,20 @@ public class SymbolBalancer {
 		}
 		if (!stack.isEmpty()) flag = false;
 		return flag;
+	}
+	
+	public boolean openBracket(char ch) {
+		for (int i = 0; i < expression.length(); i = i + 2) {
+			if (ch == expression.charAt(i)) return true;
+		}
+		return false;
+	}
+	
+	public boolean closedBracket(char ch) {
+		for (int i = 1; i < expression.length(); i = i + 2) {
+			if (ch == expression.charAt(i)) return true;
+		}
+		return false;
 	}
 	
 	public void readFile() {
