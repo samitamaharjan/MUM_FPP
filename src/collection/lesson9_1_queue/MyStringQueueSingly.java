@@ -13,9 +13,9 @@ public class MyStringQueueSingly {
 		queue.enqueue("d");
 		
 		System.out.println(queue);
-		System.out.println("Dequeue… " + queue.dequeue());
-		System.out.println("Peek… " + queue.peek());
-		System.out.println("Dequeue… " + queue.dequeue());
+		System.out.println("Dequeueï¿½ " + queue.dequeue());
+		System.out.println("Peekï¿½ " + queue.peek());
+		System.out.println("Dequeueï¿½ " + queue.dequeue());
 	}
 	
 	public void enqueue(String s) {
@@ -41,7 +41,7 @@ public class MyStringQueueSingly {
 		return head.value;
 	}
 	
-	 @Override
+	@Override
     public String toString() {
         Node1 node = head;
         

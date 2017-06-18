@@ -3,12 +3,14 @@ package collection.linkedlist;
 class ArrayStackDemo {
 
 	public static void main(String[] args) {
-		ArrayStack stk = new ArrayStack(4); // create stack of size 4
+		ArrayStack stk = new ArrayStack(8); // create stack of size 4
 		Object item;
 		stk.push('A'); // push 3 items onto stack
 		stk.push('B');
 		stk.push('C');
 		stk.push(4);
+		stk.push(5);
+		stk.push("sam");
 
 		System.out.println("size(): " + stk.size());
 		item = stk.pop(); // delete item
