@@ -26,6 +26,9 @@ class MyCode {
 }
 
 class BankDetails {
+	// Instance variables declared here
+    String name;
+    String acctNumber;
     
     BankDetails (String name, String acctNumber) {
         this.name = name;
@@ -39,7 +42,6 @@ class BankDetails {
     public String getAcctNumber() {
         return acctNumber;
     }
-    
     
     // Override equals method
     // Implement the code here   
@@ -61,10 +63,25 @@ class BankDetails {
         return result;
     }
     
-    // Instance variables declared here
-    String name;
-    String acctNumber;
+    /*public void withdraw(double amt) throws BadAttemptException {
+        checkAccount(amt);
+        balance -= amt;
+    }
+    
+    public void checkAccount(double amt) throws BadAttemptException {
+        if (balance < amt) {
+             throw new BadAttemptException("Overdraft error.");
+        }
+    }*/
 }
+
+/*class BadAttemptException extends Exception {
+    
+    public BadAttemptException(String message) {
+        super(message);
+    }
+}
+ */   
 
 class MyComparator implements Comparator<BankDetails> {
     
