@@ -107,6 +107,17 @@ class MyLinkedList {
         Node n1 = node;
         Node n2 = node.next;
         
+        if (n2 != null) {
+        	n.next = n2;
+        	n2.previous = n;
+        }
+        n1.next = n;
+        n.previous = n1;
+        
+        
+        /*Node n1 = node;
+        Node n2 = node.next;
+        
         // linking the new node to previous element
         n1.next = n;
         n.previous = n1;
@@ -115,7 +126,7 @@ class MyLinkedList {
         if (n2 != null) {
             n.next = n2;
             n2.previous = n;
-        }
+        }*/
     }
     
     public boolean remove(String data) {

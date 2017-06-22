@@ -4,7 +4,7 @@ public class CheckingAccount extends Account {
 	private final double MONTHLY_SERVICE_CHARGE = 5.00;
 
 	CheckingAccount(Employee e,  double startBalance){
-		super(e,startBalance);
+		super(e, startBalance);
 	}
 	CheckingAccount(Employee e){
 		super(e);

@@ -27,7 +27,7 @@ class Student {
     
     @Override
     public boolean equals(Object ob) {
-        if (ob == null || (ob.getClass() != Student.class)) return false;
+        if (ob == null || (ob.getClass() != this.getClass())) return false;
         Student sob = (Student) ob;
         return this.id == sob.id 
             && this.name.equals(sob.name) 

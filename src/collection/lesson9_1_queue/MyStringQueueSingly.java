@@ -13,9 +13,9 @@ public class MyStringQueueSingly {
 		queue.enqueue("d");
 		
 		System.out.println(queue);
-		System.out.println("Dequeue� " + queue.dequeue());
-		System.out.println("Peek� " + queue.peek());
-		System.out.println("Dequeue� " + queue.dequeue());
+		System.out.println("Dequeue " + queue.dequeue());
+		System.out.println("Peek " + queue.peek());
+		System.out.println("Dequeue " + queue.dequeue());
 	}
 	
 	public void enqueue(String s) {

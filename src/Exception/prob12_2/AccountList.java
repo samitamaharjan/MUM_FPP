@@ -1,9 +1,5 @@
 package Exception.prob12_2;
 
-
-
-
-
 public class AccountList {
 	private final int INITIAL_LENGTH = 4;
 	private Account[] acctArray; 

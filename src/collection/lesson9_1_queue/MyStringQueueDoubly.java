@@ -16,6 +16,8 @@ public class MyStringQueueDoubly {
 		System.out.println("Dequeue… " + queue.dequeue());
 		System.out.println("Peek… " + queue.peek());
 		System.out.println("Dequeue… " + queue.dequeue());
+		queue.delete();
+		System.out.println("After deleting last value… " + queue);
 	}
 	
 	public void enqueue(String s) {
@@ -40,6 +42,18 @@ public class MyStringQueueDoubly {
 	
 	public String peek() {
 		return head.value;
+	}
+	
+	public void delete() {
+		Node node = tail;
+		if (node == null) {
+			System.out.println("No elements in queue");
+			return;
+		}
+		node.previous.next = null;
+		tail = node.previous;
+		node.previous = null;
+		//node = null;
 	}
 	
 	@Override

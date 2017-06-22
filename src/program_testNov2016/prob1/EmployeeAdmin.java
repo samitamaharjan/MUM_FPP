@@ -17,11 +17,17 @@ public class EmployeeAdmin {
 	public static List<Employee> prepareReport(HashMap<String, Employee> table, List<String> socSecNums) {
 		List<Employee> empList = new ArrayList<>();
 		
-		for (String keyList : table.keySet()) {
+		/*for (String keyList : table.keySet()) {
 			Employee emp = table.get(keyList);
 			if (emp.getSalary() > 80000) {
 				empList.add(emp);
 			}
+		}*/
+		for (Employee emp : table.values()) {
+			int salary = emp.getSalary();
+			if (salary > 80000) {
+				empList.add(emp)
+;			}
 		}
 		Collections.sort(empList, new Comparator<Employee>() {
 

@@ -9,7 +9,7 @@ public class Undergrad extends Student{
 		this.underWage = underWage;
 		this.underHours = underHours;
 	}
-
+	
 	public int getUnderWage() {
 		return underWage;
 	}

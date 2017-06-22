@@ -3,7 +3,7 @@ package program_testJan2017.prob1;
 
 public class ArrayQueueImpl {
 
-	private int[] arr = new int[20];
+	private int[] arr = new int[10];
 	private int front = -1;
 	private int rear = 0;
 	private int size = 0;
