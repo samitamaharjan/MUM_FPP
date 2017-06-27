@@ -7,50 +7,47 @@ public class ArrayQueueImpl {
 	private int front = -1;
 	private int rear = 0;
 	private int size = 0;
-	
-	public int peek() {
-		return arr[rear];
+
+	public int peek() throws QueueException {
+		if (isEmpty()) {
+			throw new QueueException("Queue is Empty");
+		}
+		return arr[front];
 	}
-	
-	public void enqueue(int obj){
+
+	public void enqueue(int obj) {
 		if (front == -1) {
 			front++;
-			arr[rear] = obj;
+		} else if (rear == arr.length) {
+			int[] temp = new int[arr.length * 2];
+			System.arraycopy(arr, 0, temp, 0, arr.length);
+			arr = temp;
 		}
-		if (rear > arr.length - 1) {
-			resize();
-		}
-		else {
-			rear++;
-			arr[rear] = obj;
-		}
+		arr[rear] = obj;
+		rear++;
 		size++;
 	}
-	
-	public int dequeue() {
-		if (front == -1) return 0;
-		else {
-			int n = arr[front];
-			arr[front] = 0;
-			front++;
-			size--;
-			return n;
-		}
+
+	public int dequeue() throws QueueException {
+		if (isEmpty()) {
+			throw new QueueException("Queue is Empty");
+		} 
+		int val = arr[front];
+		front++;
+		size--;
+		return val;
 	}
-	
-	public boolean isEmpty(){	
-		if (front > rear) return true;
+
+	public boolean isEmpty() {
+		if (front == -1 || front > rear) {
+			return true;
+		}
 		return false;
 	}
-	
-	public void resize() {
-		int len = arr.length;
-		int[] a = new int[len * 2];
-		System.arraycopy(arr, 0, a, 0, rear + 1);
-		arr = a;
-	}
-	
-	public int size(){	
+
+	public int size() {
+		// implement
 		return size;
 	}
+
 }

@@ -18,6 +18,8 @@ public class PersonWithJob extends Person {
 		if(ob == null) return false;
 		if(ob.getClass() != this.getClass()) return false;
 		PersonWithJob p = (PersonWithJob)ob;
-		return p.getName().equals(getName()) && p.getDateOfBirth().equals(getDateOfBirth()) && p.salary == salary;
+		return p.getName().equals(getName())
+				&& p.getDateOfBirth().equals(getDateOfBirth()) 
+				&& p.salary == salary;
 	}
 }

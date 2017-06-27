@@ -8,7 +8,7 @@ class MyLinkedList {
 		Node node = head;
 		int index = 0;
 		while (node != null) {
-			if (node.value.bookName.equals(b.bookName)) {
+			if (node.value.bookName == (b.bookName)) {
 				return index;
 			}
 			node = node.next;

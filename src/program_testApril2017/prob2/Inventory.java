@@ -23,14 +23,9 @@ public class Inventory {
 	private static List<Product> prepareList(List<Bicycle> bicycles, List<Accessory> accessories) {
 		List<Product> list = new ArrayList<Product>();
 		
-		for (Bicycle bi : bicycles) {
-			list.add(bi);
-		}
-		
-		for (Accessory ac : accessories) {
-			list.add(ac);
-		}
-		
+		list.addAll(bicycles);
+		list.addAll(accessories);
+	
 		return list;
 	}
 	

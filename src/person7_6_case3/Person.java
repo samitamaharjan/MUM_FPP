@@ -23,7 +23,8 @@ public class Person {
 		if(ob == null) return false;
 		if(!(ob instanceof Person)) return false;
 		Person p = (Person)ob;
-		return p.name.equals(name) && p.dateOfBirth.equals(dateOfBirth);
+		return p.name.equals(name)
+				&& p.dateOfBirth.equals(dateOfBirth);
 	}
 	
 	public int hashCode() {

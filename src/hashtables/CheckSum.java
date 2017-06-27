@@ -4,9 +4,9 @@ import java.util.*;
 class CheckSum {
     public static void main (String[] args) {
         List<Integer> list = Arrays.asList(1, 2, 3, 6, 8);
-        System.out.println(checkForSum(list, 1));
-        System.out.println(checkSumSet(list, 5));
-        System.out.println(checkSumMap(list, 5));
+        System.out.println(checkForSum(list, 6));
+        System.out.println(checkSumSet(list, 6));
+        System.out.println(checkSumMap(list, 6));
     }
     
     public static boolean checkForSum(List<Integer> list, int z) {

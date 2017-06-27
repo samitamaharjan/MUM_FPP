@@ -1,5 +1,6 @@
 package hashtables;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -27,8 +28,8 @@ public class Employee {
 	public void printAveragePaycheck() {
 		double total = 0;
 		Set<String> commonKeySet = salaryRecord.keySet();
-		for (String key : commonKeySet) {
-			total += salaryRecord.get(key);
+		for (String key : commonKeySet) { // for (Double sal : salaryRecord.values()) {
+			total += salaryRecord.get(key); // total += sal;
 		}
 		double avgSal = total / commonKeySet.size();
 		
